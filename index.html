@@ -1,90 +1,199 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>瓦屋吉小舖 | 日本代購</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "PingFang TC", "Helvetica Neue", "Microsoft JhengHei", sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>瓦屋吉小舖｜日本代購</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Microsoft JhengHei", sans-serif;
+    }
 
-        body {
-            background-color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-            padding: 20px;
-            color: #333333;
-        }
+    body {
+      background: #f9f9f9;
+      padding: 20px;
+    }
 
-        .container {
-            max-width: 600px;
-        }
+    header {
+      text-align: center;
+      margin: 30px 0;
+    }
 
-        h1 {
-            font-size: 38px;
-            font-weight: 500;
-            margin-bottom: 25px;
-            letter-spacing: 2px;
-        }
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
 
-        p {
-            font-size: 17px;
-            color: #666666;
-            margin-bottom: 40px;
-            line-height: 1.8;
-        }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-        .button-group {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border: 1px solid #333;
-            background-color: #ffffff;
-            color: #333333;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 15px;
-            transition: all 0.3s ease;
-        }
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
 
-        .btn:hover {
-            background-color: #333333;
-            color: #ffffff;
-        }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
 
-        .btn-primary {
-            background-color: #333333;
-            color: #ffffff;
-        }
+    .info {
+      padding: 15px;
+    }
 
-        .btn-primary:hover {
-            background-color: #555555;
-            border-color: #555555;
-        }
-    </style>
+    .name {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 18px;
+      color: #e63946;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .qty {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .qty button {
+      width: 30px;
+      height: 30px;
+      border: none;
+      background: #eee;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .total {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .line-btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background: #06c755;
+      color: white;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>瓦屋吉小舖</h1>
-        <h2>wawuchi.shop</h2>
-        <p>日本代購｜動漫IP商品專營<br>一對一報價｜淘寶、抖音、小紅書、閒餘代拍｜代收服務</p>
-        <div class="button-group">
-            <a href="https://lin.ee/Qa1JzEI" class="btn btn-primary">LINE 諮詢</a>
-            <a href="https://lin.ee/Qa1JzEI" class="btn">代購須知</a>
+  <header>
+    <h1>瓦屋吉小舖｜日本代購</h1>
+    <p>選擇商品數量 → 點擊結帳 → 自動傳送給我</p>
+  </header>
+
+  <div class="container">
+    <div class="products" id="productList">
+      <!-- 商品 1 -->
+      <div class="card">
+        <img src="https://picsum.photos/600/400?1">
+        <div class="info">
+          <div class="name">範例商品 1</div>
+          <div class="price">¥1500</div>
+          <div class="qty">
+            <button onclick="changeQty(0, -1)">-</button>
+            <span id="qty-0">0</span>
+            <button onclick="changeQty(0, 1)">+</button>
+          </div>
         </div>
+      </div>
+
+      <!-- 商品 2 -->
+      <div class="card">
+        <img src="https://picsum.photos/600/400?2">
+        <div class="info">
+          <div class="name">範例商品 2</div>
+          <div class="price">¥2000</div>
+          <div class="qty">
+            <button onclick="changeQty(1, -1)">-</button>
+            <span id="qty-1">0</span>
+            <button onclick="changeQty(1, 1)">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 商品 3 -->
+      <div class="card">
+        <img src="https://picsum.photos/600/400?3">
+        <div class="info">
+          <div class="name">範例商品 3</div>
+          <div class="price">¥1800</div>
+          <div class="qty">
+            <button onclick="changeQty(2, -1)">-</button>
+            <span id="qty-2">0</span>
+            <button onclick="changeQty(2, 1)">+</button>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="total">合計：<span id="total">0</span> 台幣</div>
+    <button class="line-btn" onclick="sendToLine()">✅ 一鍵結帳傳送給瓦屋吉</button>
+  </div>
+
+  <script>
+    const products = [
+      { name: "範例商品 1", price: 1500 },
+      { name: "範例商品 2", price: 2000 },
+      { name: "範例商品 3", price: 1800 }
+    ];
+    let qtys = [0, 0, 0];
+
+    function changeQty(index, num) {
+      qtys[index] = Math.max(0, qtys[index] + num);
+      document.getElementById(`qty-${index}`).innerText = qtys[index];
+      calcTotal();
+    }
+
+    function calcTotal() {
+      let total = 0;
+      for (let i = 0; i < products.length; i++) {
+        total += qtys[i] * products[i].price;
+      }
+      document.getElementById("total").innerText = total;
+    }
+
+    function sendToLine() {
+      let text = "【瓦屋吉小舖 訂單】%0A";
+      for (let i = 0; i < products.length; i++) {
+        if (qtys[i] > 0) {
+          text += `${products[i].name} × ${qtys[i]} 個%0A`;
+        }
+      }
+      text += `合計：${document.getElementById("total").innerText} 日幣`;
+      window.open("https://line.me/R/ti/p/@375jqvtn", "_blank");
+    }
+  </script>
 </body>
 </html>
