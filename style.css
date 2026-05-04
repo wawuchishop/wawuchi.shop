@@ -48,3 +48,15 @@
   margin-right: 12px;
   object-fit: cover;
 }
+
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  background: #E7D4C0;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 16px;
+}
