@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <title>我的個人網站</title>
-  <!-- 連結樣式檔 -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wawuchi Shop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: #444;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>歡迎來到我的網站</h1>
-    <p>這是我用 GitHub 製作的第一個網站 🎉</p>
-    <div class="box">
-      <p>你可以在這裡放：</p>
-      <ul>
-        <li>自我介紹</li>
-        <li>作品</li>
-        <li>聯絡方式</li>
-      </ul>
+    <div class="container">
+        <h1>歡迎來到 Wawuchi Shop</h1>
+        <p>這是我的個人網站，正在建設中，敬請期待！</p>
+        <a href="#" class="button">聯絡我</a>
     </div>
-  </div>
 </body>
 </html>
