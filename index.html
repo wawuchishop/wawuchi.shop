@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wawuchi Shop</title>
+    <title>瓦屋吉小舖 | 日本代購</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Microsoft JhengHei", sans-serif;
+            font-family: "PingFang TC", "Helvetica Neue", "Microsoft JhengHei", sans-serif;
         }
 
         body {
@@ -20,6 +20,7 @@
             min-height: 100vh;
             text-align: center;
             padding: 20px;
+            color: #333333;
         }
 
         .container {
@@ -27,38 +28,62 @@
         }
 
         h1 {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 20px;
+            font-size: 38px;
+            font-weight: 500;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
         }
 
         p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.6;
+            font-size: 17px;
+            color: #666666;
+            margin-bottom: 40px;
+            line-height: 1.8;
         }
 
-        .button {
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
             display: inline-block;
-            padding: 12px 25px;
-            background-color: #000;
-            color: #fff;
+            padding: 12px 28px;
+            border: 1px solid #333;
+            background-color: #ffffff;
+            color: #333333;
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 16px;
+            border-radius: 30px;
+            font-size: 15px;
+            transition: all 0.3s ease;
         }
 
-        .button:hover {
-            background-color: #444;
+        .btn:hover {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        .btn-primary {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: #555555;
+            border-color: #555555;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>歡迎來到 Wawuchi Shop</h1>
-        <p>這是我的個人網站，正在建設中，敬請期待！</p>
-        <a href="#" class="button">聯絡我</a>
+        <h1>瓦屋吉小舖</h1>
+        <p>日本代購｜動漫IP商品專營<br>一對一報價｜代拍代標｜代收轉運</p>
+        <div class="button-group">
+            <a href="#" class="btn btn-primary">LINE 諮詢</a>
+            <a href="#" class="btn">代購須知</a>
+        </div>
     </div>
 </body>
 </html>
